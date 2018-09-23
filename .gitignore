@@ -1,0 +1,28 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+.env
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# production
+build
+dist
+.netlify
+
+# misc
+.DS_Store
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# IDE
+.idea/*
+*.swp
+.vscode
+
+# React app
+src/*.css
+src/styles/*.css
