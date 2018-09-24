@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_09_23_105229) do
     t.decimal "price"
     t.text "location"
     t.integer "discount"
+    t.string "timeAvailable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -7,6 +7,7 @@ class CreateOffers < ActiveRecord::Migration[5.2]
       t.numeric :price
       t.text :location
       t.integer :discount
+      t.string :timeAvailable
 
       t.timestamps
     end
