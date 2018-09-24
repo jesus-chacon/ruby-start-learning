@@ -51,7 +51,8 @@ class Main extends Component {
                         <div className="col">
                             <p><strong>Location:</strong> {offer.location}</p>
                             <p><strong>Price:</strong> {offer.price}€</p>
-                            <p><strong>Unidades disponibles:</strong> {offer.cant}</p>
+                            <p><strong>Unit availables:</strong> {offer.cant}</p>
+                            <p><strong>Time to take:</strong> {offer.timeAvailable}</p>
                         </div>
                     </div>
                 </div>
