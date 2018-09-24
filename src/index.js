@@ -1,9 +1,9 @@
-import ReactDOM from "react-dom";
 import React from "react";
+import ReactDOM from "react-dom";
 
-import App from "./app";
+import Config from "./config";
 
 ReactDOM.render(
-    <App />,
+    <Config />,
     document.getElementById("root")
 );

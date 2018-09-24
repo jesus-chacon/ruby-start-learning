@@ -1,0 +1,23 @@
+.offer-view {
+    &__header {
+        border-bottom: 1px solid $gray-base;
+        margin-bottom: $margin-default;
+    }
+
+    &__body {
+        border-bottom: 1px solid $gray-base;
+        margin-bottom: $margin-default;
+        
+        .row {
+            margin-bottom: $margin-default; 
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__footer {
+
+    }
+}

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { AUTH_TOKEN } from '../../constants';
+import { AUTH_TOKEN } from "../../constants";
 
 class LoginPage extends Component {
     constructor() {
         super();
 
         this.state = {
-            email: '',
-            password: ''
+            email: "",
+            password: ""
         };
     }
 
