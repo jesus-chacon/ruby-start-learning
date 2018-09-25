@@ -1,12 +1,7 @@
+import ACTIONS from "./actions";
+
 export const AUTH_TOKEN = "auth-token";
 
 export const API_URL = "http://localhost:3001/api/v1";
 
-export const ACTIONS_TYPES = {
-    "OFFERS_FETCH_LAUNCH": "OFFERS_FETCH_LAUNCH",
-    "OFFERS_FETCH_SUCCESS": "OFFERS_FETCH_SUCCESS",
-    "OFFERS_FETCH_ERROR": "OFFERS_FETCH_ERROR",
-    "OFFER_FETCH_LAUNCH": "OFFER_FETCH_LAUNCH",
-    "OFFER_FETCH_SUCCESS": "OFFER_FETCH_SUCCESS",
-    "OFFER_FETCH_ERROR": "OFFER_FETCH_ERROR"
-};
+export const ACTIONS_TYPES = ACTIONS;

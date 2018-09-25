@@ -33,10 +33,10 @@ const Config = () => (
                 <Switch>
                     <App>
                         <Route exact path="/login" component={loginPage} />
+                        <Route exact path="/" component={loginPage} />
                         <Route exact path="/signup" component={signupPage} />
-                        <Route exact path="/offers" component={offersPage} />
-                        <Route exact path="/" component={offersPage} />
-                        <Route exact path="/offers/:offerId" component={offerViewPage} />
+                        <PrivateRoute exact path="/offers" component={offersPage} />
+                        <PrivateRoute exact path="/offers/:offerId" component={offerViewPage} />
                     </App>
                 </Switch>
             </Fragment>

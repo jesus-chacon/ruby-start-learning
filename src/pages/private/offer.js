@@ -69,8 +69,8 @@ class Main extends Component {
     }
 }
 
-const mapStateToProps = ({ state }) => ({
-    offerState: state.offerState
+const mapStateToProps = ({ offersReducers }) => ({
+    offerState: offersReducers.offerState
 });
 
 const mapDispatchToProps = (dispatch) => ({

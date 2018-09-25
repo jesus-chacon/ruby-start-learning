@@ -5,12 +5,17 @@ import { AUTH_TOKEN } from "../constants";
 
 class PrivateRoute extends Component {
     render() {
+        const route = window.location.pathname;
         const token = localStorage.getItem(AUTH_TOKEN);
 
         if (!token) {
-            return (<Redirect to={{
-                pathname: "/login", state: { from: this.props.location }
-            }} />);
+            if (route != "/login" && route != "/signup") {
+                return (<Redirect to={{
+                    pathname: "/login", state: { from: route }
+                }} />);
+            } else {
+                return (<div></div>);
+            }
         } else {
             return (<Route {...this.props} />);
         }

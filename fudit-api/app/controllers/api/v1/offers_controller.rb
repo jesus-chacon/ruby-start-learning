@@ -1,6 +1,7 @@
 module Api::V1
     class OffersController < ApplicationController
         before_action :set_offer, only: [:show]
+        
         def index
             @offers = Offer.all()
 
