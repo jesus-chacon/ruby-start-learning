@@ -5,12 +5,15 @@ import { connect } from "react-redux";
 import { fetchOffer } from "../../actions/offers";
 
 import Loading from "../../components/loading";
+import ModalPayment from "../../components/modalPayment";
 
 class Main extends Component {
     constructor() {
         super();
 
-        this.state = {};
+        this.state = {
+            isOpenModal: false
+        };
     }
 
     render() {
@@ -58,7 +61,13 @@ class Main extends Component {
                 </div>
 
                 <div className="offer-view__footer">
-                    <button className="btn btn-primary">Pay</button>
+                    <button className="btn btn-primary" onClick={this._openModal.bind(this)}>Pay</button>
+
+                    <ModalPayment
+                        isOpen={this.state.isOpenModal}
+                        onRequestClose={this._onCloseModal.bind(this)}
+                        amount="200"
+                        paymentCallback={this._paymentCallback.bind(this)} />
                 </div>
             </div>
         );
@@ -66,6 +75,20 @@ class Main extends Component {
 
     componentDidMount() {
         this.props.getOffer(this.props.match.params.offerId);
+    }
+
+    _openModal() {
+        console.log("Open modal");
+        this.setState({ isOpenModal: true });
+    }
+
+    _onCloseModal() {
+        console.log("Closing modal");
+        this.setState({ isOpenModal: false });
+    }
+
+    _paymentCallback() {
+        console.log("Payment GOOD");
     }
 }
 
