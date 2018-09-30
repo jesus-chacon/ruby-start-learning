@@ -14,21 +14,22 @@ class SignupPage extends Component {
             email: "",
             password: "",
             confPassword: "",
-            errorPassword: false
+            errorPassword: false,
+            terms: false
         };
     }
 
     render() {
         return (
-            <div className="container">
+            <form className="container" onSubmit={this._signup.bind(this)}>
                 <div className="row justify-content-center">
-                    <div className="col-xs-10 col-sm-8 col-md-6">
+                    <div className="col-xs-11 col-sm-10 col-md-6">
                         <div className="card login-card">
-                            <h5 className="card-header">Login</h5>
+                            <h5 className="card-header">&Uacute;nete a Fudit</h5>
 
                             <div className="card-body">
-                                <div className="form-group">
-                                    <label>Name</label>
+                                <div className="md-form">
+                                    <label>Nombre*</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -37,8 +38,8 @@ class SignupPage extends Component {
                                         required />
                                 </div>
 
-                                <div className="form-group">
-                                    <label>Email</label>
+                                <div className="md-form">
+                                    <label>Correo electronico*</label>
                                     <input
                                         type="email"
                                         className="form-control"
@@ -47,8 +48,8 @@ class SignupPage extends Component {
                                         required />
                                 </div>
 
-                                <div className="form-group">
-                                    <label>Password</label>
+                                <div className="md-form">
+                                    <label>Contraseña</label>
                                     <input
                                         type="password"
                                         className={`form-control ${this.state.errorPassword ? "is-invalid" : ""}`}
@@ -57,8 +58,8 @@ class SignupPage extends Component {
                                         required />
                                 </div>
 
-                                <div className="form-group">
-                                    <label>Confirm Password</label>
+                                <div className="md-form">
+                                    <label>Repetir contraseña</label>
                                     <input
                                         type="password"
                                         className={`form-control ${this.state.errorPassword ? "is-invalid" : ""}`}
@@ -67,8 +68,13 @@ class SignupPage extends Component {
                                         required />
                                 </div>
 
-                                <div className="form-group">
-                                    <button className="btn btn-primary" onClick={this._signup.bind(this)}>Signup</button>
+                                <div className="form-check">
+                                    <input type="checkbox" onChange={e => this.setState({ terms: e.target.checked })} className="form-check-input" required />
+                                    <label className="form-check-label">Acepto los terminos y condiciones de uso <a href="https://google.es" target="black">terms</a></label>
+                                </div>
+
+                                <div className="md-form">
+                                    <button className="btn btn-primary" disabled={!this.state.terms}>Signup</button>
                                 </div>
 
                                 <Link to="/login">I have account</Link>
@@ -76,11 +82,13 @@ class SignupPage extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         );
     }
 
-    _signup() {
+    _signup(e) {
+        e.preventDefault();
+
         const { email, password, confPassword } = this.state;
 
         if (password.trim().length === 0 || password !== confPassword) {

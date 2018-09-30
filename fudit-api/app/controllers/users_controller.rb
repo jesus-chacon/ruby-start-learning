@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         
         if @user.save
-            response = { token: JsonWebToken.encode(id: @user.id, email: @user.email)}
+            response = { token: JsonWebToken.encode(user_id: @user.id)}
 
             render json: response, status: :created 
         else

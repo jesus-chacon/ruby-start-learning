@@ -3,6 +3,7 @@ import "babel-polyfill";
 import React, { Fragment } from "react";
 import { Provider } from "react-redux";
 import { hot } from "react-hot-loader";
+import axios from "axios";
 
 import {
     BrowserRouter as Router,
@@ -12,6 +13,11 @@ import {
 
 import "./scss/styles.scss";
 
+import "popper.js";
+import "bootstrap";
+import "mdbootstrap/js/mdb";
+
+import { AUTH_TOKEN } from "./constants";
 
 import { store } from "./store";
 
@@ -20,11 +26,24 @@ import loginPage from "./pages/public/login";
 import signupPage from "./pages/public/signup";
 import offersPage from "./pages/private/offers";
 import offerViewPage from "./pages/private/offer";
+import thanksPage from "./pages/private/thanks";
 
 // COMPONENTS
 import PrivateRoute from "./components/privateRoute";
 
 import App from "./app";
+
+axios.interceptors.request.use((config) => {
+    const token = localStorage.getItem(AUTH_TOKEN);
+
+    if (!!token) {
+        config.headers.common.Authorization = token;
+
+        return config;
+    } else {
+        return config;
+    }
+});
 
 const Config = () => (
     <Provider store={store}>
@@ -37,6 +56,7 @@ const Config = () => (
                         <Route exact path="/signup" component={signupPage} />
                         <PrivateRoute exact path="/offers" component={offersPage} />
                         <PrivateRoute exact path="/offers/:offerId" component={offerViewPage} />
+                        <PrivateRoute exact path="/thanks" component={thanksPage} />
                     </App>
                 </Switch>
             </Fragment>

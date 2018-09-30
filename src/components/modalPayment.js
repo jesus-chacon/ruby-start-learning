@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import StripeForm from "./stripeForm";
 import Modal from "react-bootstrap4-modal";
+
+import Loading from "./loading";
+
+import { charge } from "../actions/charges";
 
 // Props paymentCallback, amount, isOpen, onRequestClose
 
@@ -8,7 +14,9 @@ class ModalPayment extends Component {
     constructor() {
         super();
 
-        this.state = {};
+        this.state = {
+            isPaying: false
+        };
     }
 
     render() {
@@ -18,26 +26,46 @@ class ModalPayment extends Component {
                 dialogClassName="modal-sm">
 
                 <div className="modal-header">
-                    <h5 className="modal-title">React Stripe elements example</h5>
+                    <h5>Completar pago</h5>
+
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => this.props.onRequestClose()}>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
 
-                <div className="modal-body">
-                    <StripeForm
-                        tokenCallback={this._tokenCallback.bind(this)}
-                        amount={this.props.amount} />
-                </div>
+                {
+                    this.state.isPaying &&
+
+                    <Loading />
+                }
+
+                {
+                    !this.state.isPaying &&
+
+                    (
+                        <div className="modal-body">
+                            <StripeForm
+                                tokenCallback={this._tokenCallback.bind(this)} />
+                        </div>
+                    )
+                }
             </Modal>
         );
     }
 
     _tokenCallback(token) {
-        console.log("Token callback with token", token);
+        this.setState({ isPaying: true });
+
+        this.props.doCharge(token, this.props.offerState.offer.id, this.props.paymentCallback);
     }
 }
 
-export default ModalPayment;
+const mapStateToProps = ({ offersReducers }) => ({
+    offerState: offersReducers.offerState
+});
 
-/* 
+const mapDispatchToProps = (dispatch) => ({
+    doCharge: bindActionCreators(charge, dispatch)
+});
 
-
-*/
+export default connect(mapStateToProps, mapDispatchToProps)(ModalPayment);

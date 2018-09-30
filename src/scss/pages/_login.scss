@@ -1,0 +1,28 @@
+.login-card {
+    margin-top: 30px;
+
+    .card-header {
+        background-color: $brand-primary;
+        color: white;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        box-shadow: none;
+
+        .card-header {
+            background-color: $gray-base;
+            text-align: center;
+            color: $brand-primary;
+            border-bottom: 0px;
+            font-weight: bold;
+        }
+
+        .card-body {
+            background-color: $gray-base;
+
+            label {
+                color: $gray-dark;
+            }
+        }
+    }
+}

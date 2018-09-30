@@ -3,7 +3,7 @@ module Api::V1
         before_action :set_offer, only: [:show]
         
         def index
-            @offers = Offer.all()
+            @offers = Offer.where("count > 0")
 
             render json: @offers
         end

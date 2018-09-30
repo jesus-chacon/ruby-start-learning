@@ -9,7 +9,7 @@ class ShortText extends Component {
             text = text.substr(0, limit) + "...";
         }
 
-        return (<div>{text}</div>);
+        return (<span>{text}</span>);
     }
 }
 

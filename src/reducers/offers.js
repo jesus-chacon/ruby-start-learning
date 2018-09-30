@@ -77,6 +77,12 @@ const reducers = (state = defaultState, action) => {
                     error: action.err
                 }
             };
+        case ACTIONS_TYPES.OFFER_UPDATE_COUNT:
+            state.offerState.offer.count--;
+
+            return {
+                ...state
+            };
         default: return state;
     }
 };

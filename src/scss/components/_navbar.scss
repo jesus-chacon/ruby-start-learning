@@ -1,4 +1,18 @@
 nav.navbar {
-    background-color: $brand-primary;
-    margin-bottom: 2*$margin-default;
+    background-color: $gray-base;
+    margin-bottom: $margin-default;
+    border-bottom: 1px solid #bbb;
+    box-shadow: none;
+
+    .navbar-brand img {
+        height: 30px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        height: 100px;
+
+        .navbar-brand img {
+            height: 40px;
+        }
+    }
 }

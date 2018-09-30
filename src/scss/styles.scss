@@ -1,6 +1,8 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
-
 @import "variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/mdbootstrap/scss/mdb";
+
 
 @import "index";
 
@@ -8,7 +10,11 @@
 @import "components/navbar";
 @import "components/offerTag";
 @import "components/offerView";
+@import "components/thanksView";
+@import "components/buttons";
+@import "components/type";
 /* Components */
 
 /* Pages */
+@import "pages/login";
 /* Pages */

@@ -7,7 +7,7 @@ import { fetchOffer } from "../../actions/offers";
 import Loading from "../../components/loading";
 import ModalPayment from "../../components/modalPayment";
 
-class Main extends Component {
+class OfferPage extends Component {
     constructor() {
         super();
 
@@ -54,7 +54,7 @@ class Main extends Component {
                         <div className="col">
                             <p><strong>Location:</strong> {offer.location}</p>
                             <p><strong>Price:</strong> {offer.price}€</p>
-                            <p><strong>Unit availables:</strong> {offer.cant}</p>
+                            <p><strong>Unit availables:</strong> {offer.count}</p>
                             <p><strong>Time to take:</strong> {offer.timeAvailable}</p>
                         </div>
                     </div>
@@ -66,7 +66,6 @@ class Main extends Component {
                     <ModalPayment
                         isOpen={this.state.isOpenModal}
                         onRequestClose={this._onCloseModal.bind(this)}
-                        amount="200"
                         paymentCallback={this._paymentCallback.bind(this)} />
                 </div>
             </div>
@@ -78,17 +77,15 @@ class Main extends Component {
     }
 
     _openModal() {
-        console.log("Open modal");
         this.setState({ isOpenModal: true });
     }
 
     _onCloseModal() {
-        console.log("Closing modal");
         this.setState({ isOpenModal: false });
     }
 
     _paymentCallback() {
-        console.log("Payment GOOD");
+        this.props.history.push("/thanks");
     }
 }
 
@@ -100,4 +97,4 @@ const mapDispatchToProps = (dispatch) => ({
     getOffer: bindActionCreators(fetchOffer, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(OfferPage);

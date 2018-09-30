@@ -3,7 +3,7 @@ class CreateOffers < ActiveRecord::Migration[5.2]
     create_table :offers do |t|
       t.string :title
       t.string :description
-      t.integer :cant
+      t.integer :count
       t.numeric :price
       t.text :location
       t.integer :discount

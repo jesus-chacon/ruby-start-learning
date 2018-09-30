@@ -8,38 +8,47 @@ class stripeElemments extends Component {
         super();
 
         this.state = {
-            name: ""
+            name: "",
+            hasError: false
         };
     }
 
     render() {
         return (
-            <div className="checkout">
-                <p>Would you like to complete the purchase?</p>
-
+            <form className="checkout" onSubmit={this._submit.bind(this)}>
                 <div className="form-group">
-                    <label>Name of the owner</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        onChange={e => this.setState({ email: e.target.value })} />
-                </div>
-
-                <div className="form-group">
-                    <label>Billing info</label>
+                    <label>Tarjeta de cr&eacute;dito</label>
                     <CardElement />
                 </div>
 
-                <button className="btn btn-primary" onClick={this._submit.bind(this)}>Send</button>
-            </div>
+                {
+                    !!this.state.hasError &&
+                    (<p className="text-danger">Los datos introducidos son erroneos</p>)
+                }
+
+                <button className="btn btn-primary btn-sm btn-block">Pagar</button>
+            </form>
         );
     }
 
-    async _submit() {
-        console.log(this.props.stripe);
-        let { token } = await this.props.stripe.createToken({ name: this.state.name });
+    async _submit(ev) {
+        ev.preventDefault();
 
-        console.log("Token generated", token);
+        let response;
+
+        try {
+            response = await this.props.stripe.createToken({ name: this.state.name });
+        } catch (e) {
+            response = {};
+        }
+
+        const { token } = response;
+
+        if (!token) {
+            this.setState({ hasError: true });
+        } else {
+            this.props.tokenCallback(token.id);
+        }
     }
 }
 
@@ -50,7 +59,7 @@ class StripeForm extends Component {
         return (
             <StripeProvider apiKey="pk_test_ElsKNSDhhXfZEFsaTacCHUse">
                 <Elements>
-                    <Form />
+                    <Form tokenCallback={this.props.tokenCallback} />
                 </Elements>
             </StripeProvider>
         );

@@ -21,11 +21,10 @@ class LoginPage extends Component {
         return (
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-xs-10 col-sm-8 col-md-6 ">
+                    <div className="col-xs-11 col-sm-10 col-md-6 ">
                         <div className="card login-card">
-                            <h5 className="card-header">Login</h5>
+                            <h5 className="card-header">Entra en fudit</h5>
                             <div className="card-body">
-
                                 {
                                     !!loginState.hasError &&
 
@@ -34,8 +33,8 @@ class LoginPage extends Component {
                                     </div>
                                 }
 
-                                <div className="form-group">
-                                    <label>Email</label>
+                                <div className="md-form">
+                                    <label>Correo electronico</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -43,8 +42,8 @@ class LoginPage extends Component {
                                         onChange={e => this.setState({ email: e.target.value })} />
                                 </div>
 
-                                <div className="form-group">
-                                    <label>Password</label>
+                                <div className="md-form">
+                                    <label>Contraseña</label>
                                     <input
                                         type="password"
                                         className="form-control"

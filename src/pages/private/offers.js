@@ -7,7 +7,7 @@ import { fetchOffers } from "../../actions/offers";
 import Loading from "../../components/loading";
 import OfferTag from "../../components/offerTag";
 
-class Main extends Component {
+class OffersPage extends Component {
     constructor() {
         super();
 
@@ -33,12 +33,15 @@ class Main extends Component {
 
         return (
             <div className="container">
+                <h3 className="text-center">Ofertas disponibles</h3>
+                <p className="text-center">Riquisimos, sanos y muy variados. Elige el que más te guste y disfruta ayudando al planeta</p>
+
                 <div className="row row-eq-height">
                     {
                         offers.map(offer => {
                             return (
-                                <div key={offer.id} className="col-xs-12 col-sm-6 col-md-4 col-xl-3 offer-tag-wrapper">
-                                    <OfferTag offer={offer} />
+                                <div key={offer.id} className="col-xs-12 col-md-4 col-xl-3 offer-tag-wrapper">
+                                    <OfferTag offer={offer} history={this.props.history} />
                                 </div>
                             );
                         })
@@ -61,4 +64,4 @@ const mapDispatchToProps = (dispatch) => ({
     getAllOffers: bindActionCreators(fetchOffers, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(OffersPage);

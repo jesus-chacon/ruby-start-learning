@@ -4,6 +4,8 @@ Rails.application.routes.draw do
             get "me", to: "me#index"
             
             resources :offers
+            
+            post "charges", to: "charges#create"
         end
     end
 

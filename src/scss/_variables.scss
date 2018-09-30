@@ -1,6 +1,12 @@
+/* Material desing config */
+$roboto-font-path: "../../node_modules/mdbootstrap/font/roboto/" !default;
+$image-path: "../../node_modules/mdbootstrap/img" !default;
+
 /* Branding */
 $brand-primary: #2bbab8;
-$gray-base: #ccc;
+$gray-base: #F7F7F7;
+$gray-dark-light: #aaa;
+$gray-dark: #888888;
 $gray-light: #eee;
 
 /* Spaces */
@@ -9,4 +15,23 @@ $margin-default-xl: $margin-default * 2;
 $margin-default-xs: $margin-default / 2;
 
 /* Border */
-$border-radius-base: 2px;
+$border-radius-base: 0px;
+
+// BreakPoints
+$screen-sm-min: 576px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 767px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 992px;
+$screen-md-max: ($screen-lg-min - 1);
+$screen-xl-min: 1200px;
+$screen-lg-max: ($screen-xl-min -1 );
+/*
+// Usage
+@media (max-width: $screen-xs-max) {  }
+@media (min-width: $screen-sm-min) {  }
+@media (max-width: $screen-sm-max) {  }
+@media (min-width: $screen-md-min) {  }
+@media (max-width: $screen-md-max) {  }
+@media (min-width: $screen-lg-min) {  }
+*/

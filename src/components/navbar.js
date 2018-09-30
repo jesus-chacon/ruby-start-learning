@@ -8,12 +8,18 @@ class Navbar extends Component {
         const token = localStorage.getItem(AUTH_TOKEN);
 
         if (!token) {
-            return (<div></div>);
+            return (
+                <nav className="navbar navbar-expand-lg navbar-light">
+                    <Link className="navbar-brand" to="/">
+                        <img src="../../src/assets/fudit-logo-full-inverso.png" alt=""></img>
+                    </Link>
+                </nav>
+            );
         } else {
             return (
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <Link className="navbar-brand" to="/">
-                        <img src="../../src/assets/fudit-logo-full.png" height="30" alt=""></img>
+                        <img src="../../src/assets/fudit-logo-full-inverso.png" alt=""></img>
                     </Link>
                 </nav>
             );

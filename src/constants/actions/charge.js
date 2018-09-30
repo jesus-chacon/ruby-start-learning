@@ -1,0 +1,5 @@
+export default ({
+    "CHARGE_LAUNCH": "CHARGE_LAUNCH",
+    "CHARGE_SUCCESS": "CHARGE_SUCCESS",
+    "CHARGE_ERROR": "CHARGE_ERROR"
+});
