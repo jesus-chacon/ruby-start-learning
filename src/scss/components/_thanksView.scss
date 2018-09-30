@@ -1,4 +1,13 @@
 .thanks-view {
+    background-color: white;
+    padding: $margin-default*2;
+    margin-top: 2*$margin-default;
+
+    @media (min-width: $screen-md-min) {
+        max-width: 600px;
+        margin-top: 4*$margin-default;
+    }
+
     &__header, &__body {
         margin-bottom: $margin-default*2;
     }

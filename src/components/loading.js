@@ -4,13 +4,9 @@ import { PacmanLoader } from "react-spinners";
 class Loading extends Component {
     render() {
         return (
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-md-center loading">
                 <div className="col-xs">
-                    <PacmanLoader
-                        color={this.props.color || "#ab2023"}
-                        loading={this.props.loading}
-                        margin={"2px"}
-                    />
+                    <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
                 </div>
             </div>
         );

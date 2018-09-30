@@ -4,8 +4,12 @@ nav.navbar {
     border-bottom: 1px solid #bbb;
     box-shadow: none;
 
-    .navbar-brand img {
-        height: 30px;
+    .navbar-brand {
+        flex-grow: 1;
+        
+        img {
+            height: 30px;
+       }
     }
 
     @media (max-width: $screen-sm-max) {
@@ -13,6 +17,12 @@ nav.navbar {
 
         .navbar-brand img {
             height: 40px;
+        }
+    }
+
+    .nav .nav-link {
+        i.fa {
+            color: $brand-primary;
         }
     }
 }

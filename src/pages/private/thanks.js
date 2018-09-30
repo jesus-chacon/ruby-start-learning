@@ -22,7 +22,7 @@ class ThanksPage extends Component {
 
         if (!!offer) {
             return (
-                <div className="container thanks-view">
+                <div className="container thanks-view box-shadow no-hover">
                     <div className="thanks-view__header">
                         <h1 className="text-center">¡¡Enhorabuena!!</h1>
 

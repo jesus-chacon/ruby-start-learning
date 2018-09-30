@@ -27,6 +27,7 @@ import signupPage from "./pages/public/signup";
 import offersPage from "./pages/private/offers";
 import offerViewPage from "./pages/private/offer";
 import thanksPage from "./pages/private/thanks";
+import logoutPage from "./pages/public/logout";
 
 // COMPONENTS
 import PrivateRoute from "./components/privateRoute";
@@ -54,6 +55,7 @@ const Config = () => (
                         <Route exact path="/login" component={loginPage} />
                         <Route exact path="/" component={loginPage} />
                         <Route exact path="/signup" component={signupPage} />
+                        <Route exact path="/logout" component={logoutPage} />
                         <PrivateRoute exact path="/offers" component={offersPage} />
                         <PrivateRoute exact path="/offers/:offerId" component={offerViewPage} />
                         <PrivateRoute exact path="/thanks" component={thanksPage} />

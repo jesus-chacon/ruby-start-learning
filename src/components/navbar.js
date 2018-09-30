@@ -13,6 +13,20 @@ class Navbar extends Component {
                     <Link className="navbar-brand" to="/">
                         <img src="../../src/assets/fudit-logo-full-inverso.png" alt=""></img>
                     </Link>
+
+                    <ul className="nav justify-content-end">
+                        <li className="nav-item">
+                            <a className="nav-link" href="https://www.instagram.com/Fudit_/" target="_blank" rel="noopener noreferrer">
+                                <i className="fa fa-2x fa-instagram"></i>
+                            </a>
+                        </li>
+
+                        <li className="nav-item">
+                            <a className="nav-link" href="https://www.facebook.com/fuditcompany/" target="_blank" rel="noopener noreferrer">
+                                <i className="fa fa-2x fa-facebook-square"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             );
         } else {
@@ -21,6 +35,20 @@ class Navbar extends Component {
                     <Link className="navbar-brand" to="/">
                         <img src="../../src/assets/fudit-logo-full-inverso.png" alt=""></img>
                     </Link>
+
+                    <ul className="nav justify-content-end">
+                        <li className="nav-item">
+                            <a className="nav-link" href="https://www.instagram.com/Fudit_/" target="_blank" rel="noopener noreferrer">
+                                <i className="fa fa-2x fa-instagram"></i>
+                            </a>
+                        </li>
+
+                        <li className="nav-item">
+                            <a className="nav-link" href="https://www.facebook.com/fuditcompany/" target="_blank" rel="noopener noreferrer">
+                                <i className="fa fa-2x fa-facebook-square"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             );
         }

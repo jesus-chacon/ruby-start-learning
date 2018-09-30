@@ -1,23 +1,46 @@
 .offer-view {
-    &__header {
-        border-bottom: 1px solid $gray-base;
-        margin-bottom: $margin-default;
+    @media (max-width: $screen-sm-max) {
+        width: 100%;
+        max-width: none;
     }
 
-    &__body {
-        border-bottom: 1px solid $gray-base;
-        margin-bottom: $margin-default;
-        
-        .row {
-            margin-bottom: $margin-default; 
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
+    @media (min-width: $screen-md-min) {
+        max-width: 600px;
+        background-color: white;
+
+        &__header {
+            margin-top: 0 !important;
         }
     }
 
-    &__footer {
+    &__header {
+        margin-top: (-1)*$margin-default;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: $margin-default;
+        padding: 0;
 
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        .title {
+            height: 50px;
+            line-height: 50px;
+
+            .time-available {
+                font-size: 60%;
+                color: $gray-dark-light;
+                line-height: 50px;
+            }
+        }
+
+        .price {
+            height: 50px;
+            line-height: 50px;
+        }
     }
 }
