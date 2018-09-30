@@ -36,7 +36,7 @@ class OfferPage extends Component {
         const offer = offerState.offer;
 
         return (
-            <div className="container offer-view box-shadow no-hover" onClick={this._openModal.bind(this)}>
+            <div className="container offer-view box-shadow no-hover">
                 <div className="row">
                     <div className="offer-view__header col-12">
                         <FoodImage imgUrl={offer.imgUrl} className="img-fluid" />
