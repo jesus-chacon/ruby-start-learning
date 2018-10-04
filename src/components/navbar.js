@@ -11,7 +11,7 @@ class Navbar extends Component {
             return (
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <Link className="navbar-brand" to="/">
-                        <img src="../../src/assets/fudit-logo-full-inverso.png" alt=""></img>
+                        <img src="/assets/fudit-logo-full-inverso.png" alt=""></img>
                     </Link>
 
                     <ul className="nav justify-content-end">
@@ -33,7 +33,7 @@ class Navbar extends Component {
             return (
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <Link className="navbar-brand" to="/">
-                        <img src="../../src/assets/fudit-logo-full-inverso.png" alt=""></img>
+                        <img src="/assets/fudit-logo-full-inverso.png" alt=""></img>
                     </Link>
 
                     <ul className="nav justify-content-end">
