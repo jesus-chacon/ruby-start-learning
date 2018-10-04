@@ -5,7 +5,7 @@ class FoodImage extends Component {
         const imgUrl = this.props.imgUrl;
 
         return (
-            <img src={imgUrl ? imgUrl : "../../src/assets/food-images/burger.jpg"} alt="Food Image" className={this.props.className} />
+            <img src={imgUrl ? imgUrl : "/assets/food-images/burger.jpg"} alt="Food Image" className={this.props.className} />
         );
     }
 }
