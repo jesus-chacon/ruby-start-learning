@@ -57,7 +57,7 @@ const Form = injectStripe(stripeElemments);
 class StripeForm extends Component {
     render() {
         return (
-            <StripeProvider apiKey="pk_test_ElsKNSDhhXfZEFsaTacCHUse">
+            <StripeProvider apiKey="pk_live_Wir5WCVoKySCjcrcoUvyzajo">
                 <Elements>
                     <Form tokenCallback={this.props.tokenCallback} />
                 </Elements>
