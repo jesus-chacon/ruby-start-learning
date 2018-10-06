@@ -10,30 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_145259) do
+ActiveRecord::Schema.define(version: 2018_10_06_093509) do
 
-  create_table "offers", force: :cascade do |t|
+  create_table "offers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "count"
-    t.decimal "price"
+    t.decimal "price", precision: 10
     t.text "location"
     t.integer "discount"
     t.string "timeAvailable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "imgUrl"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "offer_id"
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "offer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["offer_id"], name: "index_orders_on_offer_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
