@@ -1,3 +1,5 @@
+require 'slack-ruby-client'
+
 module Api::V1
     class ChargesController < ApplicationControllerAuth
         def create
@@ -26,6 +28,9 @@ module Api::V1
 
                         @order = Order.create(offer: @offer, user: @user)
                         @offer.update(count: @offer.count-1);
+
+                        client = Slack::Web::Client.new
+                        client.chat_postMessage(channel: '#sells', text: "Se ha realizado una venta para #{@user.email} de #{@offer.title} por #{@offer.price} €", as_user: true)
 
                         if @order.save
                             render json: @order

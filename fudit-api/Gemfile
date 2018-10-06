@@ -59,3 +59,6 @@ gem 'stripe'
 
 # Envirovenment
 gem 'figaro'
+
+# Slack
+gem 'slack-ruby-client'
