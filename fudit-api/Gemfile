@@ -62,3 +62,6 @@ gem 'figaro'
 
 # Slack
 gem 'slack-ruby-client'
+
+# Mysql
+gem "mysql2"
