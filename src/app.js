@@ -1,18 +1,24 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 // COMPONENTS
 import Navbar from "./components/navbar";
+import GoogleTagManager from "./components/GoogleTagManager";
 
 class App extends Component {
-    render() {
-        return (
-            <div>
-                <Navbar />
+  render() {
+    // or with all optional parameters
+    const event = {platform: 'react-stack'}
 
-                {this.props.children}
-            </div>
-        );
-    }
+    return (
+      <div>
+        <GoogleTagManager gtmId='GTM-TT9G3KZ' additionalEvents={event} />
+
+        <Navbar />
+
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
 export default App;
