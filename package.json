@@ -16,6 +16,7 @@
         "react": "16.4.2",
         "react-bootstrap4-modal": "^1.5.0",
         "react-dom": "16.4.2",
+        "react-google-tag-manager": "^2.2.1",
         "react-redux": "^5.0.7",
         "react-router-dom": "4.3.1",
         "react-scripts": "^1.1.4",
