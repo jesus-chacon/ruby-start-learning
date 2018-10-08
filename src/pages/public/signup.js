@@ -89,12 +89,12 @@ class SignupPage extends Component {
   _signup(e) {
     e.preventDefault();
 
-    const {email, password, confPassword} = this.state;
+    const {email, password, confPassword, name} = this.state;
 
     if (password.trim().length === 0 || password !== confPassword) {
       this.setState({errorPassword: true});
     } else {
-      this.props.signup({email, password}, this.props.history);
+      this.props.signup({email, password, name}, this.props.history);
     }
   }
 }
