@@ -29,7 +29,7 @@ class LoginPage extends Component {
                                     !!loginState.hasError &&
 
                                     <div className="alert alert-danger" role="alert">
-                                        The credentials are invalid
+                                        Los datos introducidos no son validos
                                     </div>
                                 }
 
@@ -55,7 +55,7 @@ class LoginPage extends Component {
                                     <button className="btn btn-primary" onClick={this._login.bind(this)}>Login</button>
                                 </div>
 
-                                <Link to="/signup">I not have account yet</Link>
+                                <Link to="/signup">Ya tengo una cuenta</Link>
                             </div>
                         </div>
                     </div>

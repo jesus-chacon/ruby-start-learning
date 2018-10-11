@@ -70,14 +70,18 @@ class SignupPage extends Component {
 
                 <div className="form-check">
                   <input type="checkbox" onChange={e => this.setState({terms: e.target.checked})} className="form-check-input" required />
-                  <label className="form-check-label">Acepto los terminos y condiciones de uso <a href="https://www.fudit.es/terminos/" target="black">terms</a></label>
+                  <label className="form-check-label">
+                    Acepto los 
+                    <a href="https://www.fudit.es/terminos/" target="black">terminos y condiciones</a>
+                    de uso 
+                  </label>
                 </div>
 
                 <div className="md-form">
-                  <button className="btn btn-primary" disabled={!this.state.terms}>Signup</button>
+                  <button className="btn btn-primary" disabled={!this.state.terms}>Entrar</button>
                 </div>
 
-                <Link to="/login">I have account</Link>
+                <Link to="/login">Ya tengo una cuenta</Link>
               </div>
             </div>
           </div>
