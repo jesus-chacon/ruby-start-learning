@@ -48,6 +48,12 @@ class Navbar extends Component {
                                 <i className="fa fa-2x fa-facebook-square"></i>
                             </a>
                         </li>
+
+                        <li className="nav-item">
+                          <Link className="nav-link" to="/logout">
+                            <span>Logout</span>
+                          </Link>
+                        </li>
                     </ul>
                 </nav>
             );
