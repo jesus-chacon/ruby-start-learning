@@ -21,8 +21,9 @@ nav.navbar {
     }
 
     .nav .nav-link {
-        i.fa {
+        i.fa, span {
             color: $brand-primary;
+            vertical-align: -webkit-baseline-middle;
         }
     }
 }
