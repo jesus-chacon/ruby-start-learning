@@ -9,7 +9,11 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 const JqueryPlugin = new webpack.ProvidePlugin({
     $: "jquery",
-    jQuery: "jquery"
+    jQuery: "jquery",
+    jQuery: 'jquery',
+    'window.$': 'jquery',
+    'window.jQuery': 'jquery',
+    Waves: 'node-waves'
 })
 
 module.exports = {

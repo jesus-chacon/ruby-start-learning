@@ -1,24 +1,24 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 // COMPONENTS
 import Navbar from "./components/navbar";
-import GoogleTagManager from "./components/GoogleTagManager";
+import GoogleTagManager from "./components/googleTagManager";
 
 class App extends Component {
-  render() {
-    // or with all optional parameters
-    const event = {platform: 'react-stack'}
+    render() {
+        // or with all optional parameters
+        const event = { platform: "react-stack" }
 
-    return (
-      <div>
-        <GoogleTagManager gtmId='GTM-TT9G3KZ' additionalEvents={event} />
+        return (
+            <div>
+                <GoogleTagManager gtmId="GTM-TT9G3KZ" additionalEvents={event} />
 
-        <Navbar />
+                <Navbar />
 
-        {this.props.children}
-      </div>
-    );
-  }
+                {this.props.children}
+            </div>
+        );
+    }
 }
 
 export default App;
